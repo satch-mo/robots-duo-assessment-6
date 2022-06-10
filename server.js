@@ -33,7 +33,7 @@ app.get("/js", (req, res) => {
 app.get("/api/robots", (req, res) => {
   try {
     rollbar.info("Someone requested to see all robots");
-    res.status(200).send(botsArr);
+    res.status(200).send(bots); // this was the error that wasn't allowing us to see all boys. needed  to change to bots from botsArr;
   } catch (error) {
     rollbar.error("Someone didn't see all robots");
     console.log("ERROR GETTING BOTS", error);
